@@ -22,7 +22,7 @@ class EiCaptchaTest extends PHPUnit_Framework_TestCase {
      */
     public function testModuleIsHooked() {
         
-        $moduleInstance = ModuleCore::getInstanceByName($this->_moduleName);
+        $moduleInstance = Module::getInstanceByName($this->_moduleName);
         $modulesHooks = array('header','displayCustomerAccountForm');
         
         foreach ( $modulesHooks as $hook) {
@@ -36,13 +36,19 @@ class EiCaptchaTest extends PHPUnit_Framework_TestCase {
      */
     public function testModuleConfiguration(){
         
-        //On vérifie que les configurations obligatoires existent
-        $this->assertNotFalse(ConfigurationCore::get('CAPTCHA_PUBLIC_KEY'));
-        $this->assertNotFalse(ConfigurationCore::get('CAPTCHA_PRIVATE_KEY'));
-        
-        //Et qu'elles ne sont pas vide
-        $this->assertNotEmpty(ConfigurationCore::get('CAPTCHA_PUBLIC_KEY'));
-        $this->assertNotEmpty(ConfigurationCore::get('CAPTCHA_PRIVATE_KEY'));
+        //On vérifie que les configurations existent
+        $this->assertNotFalse(Configuration::get('CAPTCHA_PUBLIC_KEY'));
+        $this->assertNotFalse(Configuration::get('CAPTCHA_PRIVATE_KEY'));
+		$this->assertNotFalse(Configuration::get('CAPTCHA_ENABLE_ACCOUNT'));
+		$this->assertNotFalse(Configuration::get('CAPTCHA_ENABLE_CONTACT'));
+		$this->assertNotFalse(Configuration::get('CAPTCHA_THEME'));
+		    
+        //Et qu'elles ne sont pas vides
+        $this->assertNotEmpty(Configuration::get('CAPTCHA_PUBLIC_KEY'));
+        $this->assertNotEmpty(Configuration::get('CAPTCHA_PRIVATE_KEY'));
+		$this->assertNotEmpty(Configuration::get('CAPTCHA_ENABLE_ACCOUNT'));
+		$this->assertNotEmpty(Configuration::get('CAPTCHA_ENABLE_CONTACT'));
+		$this->assertNotEmpty(Configuration::get('CAPTCHA_THEME'));
     }
 
 }

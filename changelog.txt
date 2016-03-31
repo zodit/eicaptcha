@@ -24,3 +24,4 @@
  - V 0.4.3 - 2015-06-17 : Ajout du code pour mettre en place le captcha sur les commentaires produits // Add code to display captcha on the product comments form
  - V 0.4.4 - 2015-07-07 : Correctif lorsque le captcha est activé à la fois sur le module sendtoafriend et productcomments  // Correction when the captcha is enable on both productcomments and sendtoafriend module
  - V 0.4.5 - 2015-08-12 : Possibilité d'activer / désactiver le captcha sur le formulaire de contact // Add possibilty to enable/disable the captcha on the contact form
+ - V 0.4.6 - 2016-03-31 : Configuration du thème et de la langue du captcha // Configuration of theme and lang of captcha ==>  BY PasiC
