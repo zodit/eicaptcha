@@ -39,16 +39,15 @@ class EiCaptchaTest extends PHPUnit_Framework_TestCase {
         //On vérifie que les configurations existent
         $this->assertNotFalse(Configuration::get('CAPTCHA_PUBLIC_KEY'));
         $this->assertNotFalse(Configuration::get('CAPTCHA_PRIVATE_KEY'));
-		$this->assertNotFalse(Configuration::get('CAPTCHA_ENABLE_ACCOUNT'));
-		$this->assertNotFalse(Configuration::get('CAPTCHA_ENABLE_CONTACT'));
-		$this->assertNotFalse(Configuration::get('CAPTCHA_THEME'));
+	$this->assertNotFalse(Configuration::get('CAPTCHA_ENABLE_ACCOUNT'));
+	$this->assertNotFalse(Configuration::get('CAPTCHA_ENABLE_CONTACT'));
+	$this->assertNotFalse(Configuration::get('CAPTCHA_THEME'));
 		    
         //Et qu'elles ne sont pas vides
         $this->assertNotEmpty(Configuration::get('CAPTCHA_PUBLIC_KEY'));
         $this->assertNotEmpty(Configuration::get('CAPTCHA_PRIVATE_KEY'));
-		$this->assertNotEmpty(Configuration::get('CAPTCHA_ENABLE_ACCOUNT'));
-		$this->assertNotEmpty(Configuration::get('CAPTCHA_ENABLE_CONTACT'));
-		$this->assertNotEmpty(Configuration::get('CAPTCHA_THEME'));
+        // La valeur par défaut 0 est considérée comme vide par Phpunit, on ne peut donc pas la vérifier
+        // via assertNotEmpty
     }
 
 }
